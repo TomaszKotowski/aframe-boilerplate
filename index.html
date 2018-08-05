@@ -1,18 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello, World! - A-Frame</title>
-    <meta name="description" content="Hello, World! - A-Frame">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hello, World! - A-Frame</title>
+  <meta name="description" content="Hello, World! - A-Frame">
+  <!-- <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> -->
+  <script src="./aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-text value="Hello, World!" position="-0.5 1 -1"></a-text>
+    <a-box color="red" position="0 1 -2"></a-box>
+    <a-box color="pink" position="-2.1 2.2 -2.5" rotation="0 0 45 ">
+      <a-animation attribute="rotation" to="0.4 2.6 -360" direction="alternate" dur="6000" repeat="indefinite"></a-animation>
+    </a-box>
+    <a-box color="blue" position="2 1 -2.4" event-set__enter="_event: mouseenter; color: green" event-set__leave="_event: mouseleave; color: blue"></a-box>
+    <a-cone color="tomato" radius-bottom="0.5" radius-top="0.3" position="2 1 0"></a-cone>
+    <a-box color="yellow" position="2 2 -2.6"></a-box>
+    <a-plane rotation="-90 0 0" width="15" height="15" position="0 0 0" color="gray"></a-plane>
+    <a-sky color="#ADD8E6"></a-sky>
+    <!-- <a-sky color="#ADD8E6" src="./jason-blackeye-295313-unsplash.jpg"></a-sky> -->
+    <a-entity position="0 1.5 0">
+      <a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-entity>
+  </a-scene>
+</body>
+
 </html>
